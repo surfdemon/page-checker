@@ -8,9 +8,12 @@ print "What site would you like to check?";
 my $site = <STDIN>;
 print "What file would you lke to save to?";
 my $file = <STDIN>;
-my $tmpfile = "tmp-$file";
+my $tmpfile = "tmp-" . $file;
+my $content = ""
 
-my $content = getstore($site, $file);
+print "$file"
+
+$content = getstore($site, $file);
 die "Couldn't get it!" unless defined $content;
 
 my ($content_type, $length, $time, $expires, $server) = head($site);
